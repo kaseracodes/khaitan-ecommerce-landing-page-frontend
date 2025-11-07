@@ -2,7 +2,7 @@
 import apiClient from '../apiClient';
 import { API_URLS } from '../urls';
 
-export const productApi = {
+export const productAPI = {
 
   list: (enableLogging = false) => apiClient.get(API_URLS.PRODUCT.LIST, { enableLogging }),
 

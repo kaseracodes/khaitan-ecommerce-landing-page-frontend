@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { productApi } from "../../networking/api/productApi";
+import { productAPI } from "../../networking/api/productAPI";
 
 export function useHomePageLogic() {
     const [count, setCount] = useState(0);
@@ -15,7 +15,7 @@ export function useHomePageLogic() {
                 setLoading(true);
                 setError(null);
 
-                const response = await productApi.list(true); // 👈 pass enableLogging true
+                const response = await productAPI.list(true); // 👈 pass enableLogging true
                 // now response is always like { success, message, data, error, status }
 
                 if (response.success) {
