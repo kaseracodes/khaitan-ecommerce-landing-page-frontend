@@ -36,7 +36,7 @@ export function setupResponseInterceptor(apiClient) {
                 payload.success = payload.sucess;
 
             if (response.config.enableLogging) {
-                console.debug("[Axios Response]", {
+                console.log("[Response Log]", {
                     url: response.config.url,
                     status: response.status,
                     data: payload,
@@ -65,18 +65,18 @@ export function setupResponseInterceptor(apiClient) {
             };
 
             if (status === 401) {
-                console.warn("Unauthorized → clearing session");
+                console.log("Unauthorized → clearing session");
                 localStorage.removeItem("authToken");
                 // [TODO] fix: handle navigation on aunthorised error
                 // window.dispatchEvent(new CustomEvent("unauthorized"));
             }
 
             if (status >= 500) {
-                console.error("[Server Error]", normalizedError);
+                console.log("[Server Error]", normalizedError);
             }
 
-            if (isDev && error.config?.enableLogging) {
-                console.debug("[Axios Error Response]", normalizedError);
+            if (error.config?.enableLogging) {
+                console.log("[Axios Error Response]", normalizedError);
             }
 
             return Promise.reject(normalizedError);

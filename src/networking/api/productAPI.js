@@ -4,7 +4,7 @@ import { API_URLS } from '../urls';
 
 export const productAPI = {
 
-  list: (enableLogging = false) => apiClient.get(API_URLS.PRODUCT.LIST, { enableLogging }),
+  list: (enableLogging = false) => apiClient.get(API_URLS.PRODUCT.LIST(), { enableLogging }),
 
   details: (id, enableLogging = false) => apiClient.get(API_URLS.PRODUCT.DETAILS(id), { enableLogging }),
 
