@@ -13,7 +13,7 @@ export function useApiTestingPageLogic() {
         async function apiTester() {
             try {
                 // Product APIs
-                // const response = await productAPI.list(true);
+                const response = await productAPI.list(true);
                 // const response = await productAPI.details(41, false);
 
                 // Category API
@@ -39,15 +39,15 @@ export function useApiTestingPageLogic() {
                 // };
                 // const response = await userAPI.signup(requestBody, true);
 
-                const requestBody = {
-                    email: "founders@hiredue.com",
-                    password: "password123*"
-                };
-                const response = await userAPI.signin(requestBody, true);
-                if (response.success && response.data?.token) {
-                    localStorage.setItem("authToken", response.data.token);
-                    console.log("✅ Token saved to localStorage");
-                }
+                // const requestBody = {
+                //     email: "founders@hiredue.com",
+                //     password: "password123*"
+                // };
+                // const response = await userAPI.signin(requestBody, true);
+                // if (response.success && response.data?.token) {
+                //     localStorage.setItem("authToken", response.data.token);
+                //     console.log("✅ Token saved to localStorage");
+                // }
 
                 // const response = await userAPI.verifyOtp(1308, { otp: "123456" }, true);
                 // const response = await userAPI.resendOtp(1308, true);
